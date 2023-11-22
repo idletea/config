@@ -11,8 +11,8 @@ packages: (header "packages")
         base-devel man-db neovim ripgrep openssh fzf jq fd \
         git git-delta bash-completion bind unzip lsof fish \
         \
-        noto-fonts noto-fonts-emoji ttf-iosevkaterm-nerd \
-        ttf-nerd-fonts-symbols-mono ttf-liberation \
+        extra/adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji \
+        ttf-iosevkaterm-nerd ttf-nerd-fonts-symbols-mono ttf-liberation \
         \
         sway swayidle swaylock swaybg foot foot-terminfo \
         waybar wofi brightnessctl xdg-user-dirs xdg-utils \
@@ -50,7 +50,7 @@ system-copy name dest:
     end
 
 ## config-files
-config-files: (header "config files") dot-home dot-config
+config-files: (header "config files") dot-home dot-config dot-local
 dot-home:
     #!/usr/bin/env fish
     for file in (ls dot)
@@ -71,6 +71,27 @@ dot-config:
     for path in (find dot/config | tail -n +2)
     	set -l fullpath (realpath $path)
     	set -l target (echo "$HOME/.config$path" | sed "s/dot\/config//")
+        if test -d $fullpath
+            if not test -e $target
+                just cmd "mkdir -p $target"
+            else if not test -d $target
+                just msg "not a directory: $target" "error"
+            end
+        else
+            if test -h $target
+                just msg "$target already symlinked" "noop"
+            else
+                just cmd "ln -s $fullpath $target"
+            end
+        end
+    end
+
+dot-local:
+    #!/usr/bin/env fish
+    # tail -n +2 skips the first line (.config itself)
+    for path in (find dot/local | tail -n +2)
+    	set -l fullpath (realpath $path)
+    	set -l target (echo "$HOME/.local$path" | sed "s/dot\/local//")
         if test -d $fullpath
             if not test -e $target
                 just cmd "mkdir -p $target"
