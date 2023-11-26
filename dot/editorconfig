@@ -11,5 +11,5 @@ trim_trailing_whitespace = true
 [{Makefile,makefile,*.go}]
 indent_style = tab
 
-[*.{yml,yaml,rb,erb,html,json,tf}]
+[*.{yml,yaml,rb,erb,html,json,tf,tmpl}]
 indent_size = 2

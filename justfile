@@ -1,3 +1,4 @@
+set shell := ["fish", "-c"]
 long-running := "false"
 
 default: packages system-config config-files latest-releases
@@ -143,8 +144,7 @@ latest-rtx:
 
 ## util
 header name:
-    #!/usr/bin/env fish
-    printf "%s=== {{name}}%s\n" \
+    @printf "%s=== {{name}}%s\n" \
         (set_color -o cyan) (set_color normal)
 cmd cmd:
     @just msg "{{cmd}}" "bold" "true"
