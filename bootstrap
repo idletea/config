@@ -1,0 +1,27 @@
+#!/bin/bash
+# bootstrap
+#
+# what needs to be run as root to allow for the rest
+# of the config to be applied as a normal user
+set -euo pipefail
+
+USERNAME="terry"
+SUDOERS_FILE="config"
+
+echo "-- installing prerequisites"
+pacman -S --noconfirm --needed base-devel fish just
+
+if ! cat /etc/passwd | grep $USERNAME 2>&1 >/dev/null; then
+    echo "-- creating user $USERNAME"
+    useradd --create-home --shell /usr/bin/fish -G wheel terry
+    passwd terry
+else
+    echo "-- user $USERNAME already exists"
+fi
+
+echo "-- writing /etc/sudoers.d/$SUDOERS_FILE"
+cat << EOF >/etc/sudoers.d/$SUDOERS_FILE
+Defaults timestamp_timeout=120
+%wheel ALL=(ALL) ALL
+EOF
+chmod 440 /etc/sudoers.d/$SUDOERS_FILE
