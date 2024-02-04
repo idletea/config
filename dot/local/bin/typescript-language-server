@@ -1,0 +1,3 @@
+#!/bin/sh
+# shim to try and load any `cli.mjs` in the PATH
+exec cli.mjs $@

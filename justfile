@@ -9,13 +9,15 @@ packages: (header "packages")
     set -l stdout (mktemp)
     set -l stderr (mktemp)
     sudo pacman -S --needed --noconfirm -q \
-        base base-devel man-db neovim ripgrep openssh fzf fd \
-        git git-delta bash-completion bind unzip lsof jq \
+        base base-devel man-db neovim ripgrep openssh fzf fd git \
+        git-delta bash-completion bind unzip lsof jq imagemagick \
+        acpi watchexec \
         \
-        ttf-iosevkaterm-nerd ttf-nerd-fonts-symbols-mono ttf-liberation \
+        ttf-iosevkaterm-nerd ttf-nerd-fonts-symbols-mono \
+        ttf-liberation otf-font-awesome \
         \
-        sway swayidle swaylock foot foot-terminfo \
-        waybar wofi brightnessctl xdg-user-dirs xdg-utils \
+        sway swayidle swaylock swaybg foot foot-terminfo \
+        waybar fuzzel brightnessctl xdg-user-dirs xdg-utils \
         xdg-desktop-portal xdg-desktop-portal-wlr \
         pipewire-pulse pavucontrol wl-clipboard xorg-xwayland \
         \

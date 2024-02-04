@@ -1,7 +1,6 @@
 function fish_prompt
     set -f last_status "$status"
-    printf "%s %s%s%s" \
-        (prompt_login) \
+    printf "%s%s%s" \
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 
     if test -n "$VIRTUAL_ENV"
@@ -25,6 +24,11 @@ function fish_prompt
     if test -n "$KUBECTL_NAMESPACE"
         printf " %s󱃾$KUBECTL_NAMESPACE%s" \
             (set_color -o blue) (set_color normal)
+    end
+
+    if not test (mise current | wc -l) = "0"
+        printf " %s⫰mise%s" \
+            (set_color -o cyan) (set_color normal)
     end
 
     if not test "$last_status" = "0"
