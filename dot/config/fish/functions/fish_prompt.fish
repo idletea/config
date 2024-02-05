@@ -26,8 +26,9 @@ function fish_prompt
             (set_color -o blue) (set_color normal)
     end
 
-    if not test (mise current | wc -l) = "0"
-        printf " %s⫰mise%s" \
+    set -l mise_configs (mise config ls --no-header | wc -l)
+    if test $mise_configs -gt "1"
+        printf " %smise%s" \
             (set_color -o cyan) (set_color normal)
     end
 
