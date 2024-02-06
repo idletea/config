@@ -18,7 +18,7 @@ packages: (header "packages")
         \
         sway swayidle swaylock swaybg foot foot-terminfo \
         waybar fuzzel brightnessctl xdg-user-dirs xdg-utils \
-        xdg-desktop-portal xdg-desktop-portal-wlr \
+        xdg-desktop-portal xdg-desktop-portal-wlr libnotify mako \
         pipewire-pulse pavucontrol wl-clipboard xorg-xwayland \
         \
         podman kubectl \
