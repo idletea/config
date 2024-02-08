@@ -1,7 +1,12 @@
 set shell := ["fish", "-c"]
 get-latest := "false"
 
-default: packages system-config config-files latest-releases
+default: not-macos packages system-config config-files latest-releases
+
+## don't run on macos
+not-macos:
+    #!/usr/bin/fish
+    if test (uname) != "Linux"; exit 1; end
 
 ## packages
 packages: (header "packages")
