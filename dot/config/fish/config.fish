@@ -18,7 +18,7 @@ if status is-interactive
 
     if test "$linux" = "true"
         set -gx TERM xterm-256color
-        set -ga PATH $XDG_DATA_DIR/mise/installs/1password-cli/latest/bin
+        set -ga PATH $XDG_DATA_HOME/mise/installs/1password-cli/latest/bin
 
         if which mise &>/dev/null
             mise activate fish | source

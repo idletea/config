@@ -25,6 +25,7 @@ packages: (header "packages")
         waybar fuzzel brightnessctl xdg-user-dirs xdg-utils \
         xdg-desktop-portal xdg-desktop-portal-wlr libnotify mako \
         pipewire-pulse pavucontrol wl-clipboard xorg-xwayland \
+        grim slurp \
         \
         podman \
         >$stdout 2>$stderr
