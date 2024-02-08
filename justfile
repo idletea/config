@@ -21,7 +21,7 @@ packages: (header "packages")
         xdg-desktop-portal xdg-desktop-portal-wlr libnotify mako \
         pipewire-pulse pavucontrol wl-clipboard xorg-xwayland \
         \
-        podman kubectl \
+        podman \
         >$stdout 2>$stderr
     if test "$status" != "0"
         just msg "pacman failure!" "error"

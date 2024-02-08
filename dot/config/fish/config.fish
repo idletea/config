@@ -11,6 +11,7 @@ if status is-interactive
     alias j="just"
     alias ls="ls --color=auto"
     alias ip="ip -c=always"
+    alias mr="mise run --"
     alias pacman="sudo pacman"
     alias podman="sudo podman"
 
