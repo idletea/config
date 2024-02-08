@@ -10,10 +10,6 @@ if status is-interactive
     alias ls="ls --color=auto"
     alias mr="mise run --"
 
-    if which mise &>/dev/null
-        mise activate fish | source
-    end
-
     # system specific things
     set -l linux "false"
     if test (uname) = "Linux"
@@ -24,9 +20,18 @@ if status is-interactive
         set -gx TERM xterm-256color
         set -ga PATH $XDG_DATA_DIR/mise/installs/1password-cli/latest/bin
 
+        if which mise &>/dev/null
+            mise activate fish | source
+        end
+
         alias ip="ip -c=always"
         alias pacman="sudo pacman"
         alias podman="sudo podman"
     else
+        set -ga PATH /opt/homebrew/bin
+
+        alias ls="gls --color=auto --hide Desktop --hide Downloads \
+            --hide Movies --hide Pictures --hide Documents \
+            --hide Library --hide Music --hide Public"
     end
 end
