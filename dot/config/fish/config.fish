@@ -11,9 +11,9 @@ if status is-interactive
     alias mr="mise run --"
 
     # system specific things
-    set -l linux "false"
+    set linux "false"
     if test (uname) = "Linux"
-        set -l linux "true"
+        set linux "true"
     end
 
     if test "$linux" = "true"
