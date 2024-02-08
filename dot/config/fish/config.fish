@@ -1,6 +1,7 @@
 set -g fish_greeting
 
 set -ga PATH $HOME/.local/bin
+set -ga PATH $XDG_DATA_DIR/mise/installs/1password-cli/latest/bin
 set -gx EDITOR /usr/bin/nvim
 
 if status is-interactive

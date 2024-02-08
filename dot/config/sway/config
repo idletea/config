@@ -2,8 +2,9 @@
 output eDP-1 scale 1.5
 output "*" background /home/terry/.config/wallpaper fill
 
-input "2362:628:PIXA3854:00_093A :0274_Touchpad" {
+input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     scroll_factor 0.4
+    dwt disabled
 }
 
 ## aesthetics

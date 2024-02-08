@@ -8,7 +8,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["cpu", "memory"],
-    "modules-right": ["pulseaudio", "battery", "clock"],
+    "modules-right": ["network", "pulseaudio", "battery", "clock"],
 
     "cpu": {
         "interval": 5,
@@ -21,6 +21,10 @@
         "format": " {used} GiB",
         "max-length": 12,
         "min-length": 12
+    },
+    "network": {
+        "format-wifi": " ",
+        "format-disconnected": " "
     },
     "pulseaudio": {
         "scroll-step": 2,

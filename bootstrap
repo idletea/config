@@ -13,7 +13,7 @@ pacman -S --noconfirm --needed base-devel fish just
 
 if ! cat /etc/passwd | grep $USERNAME 2>&1 >/dev/null; then
     echo "-- creating user $USERNAME"
-    useradd --create-home --shell /usr/bin/fish -G wheel terry
+    useradd --create-home --shell /usr/bin/bash -G wheel terry
     passwd terry
 else
     echo "-- user $USERNAME already exists"
