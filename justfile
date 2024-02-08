@@ -19,7 +19,7 @@ packages: (header "packages")
         acpi watchexec \
         \
         ttf-iosevkaterm-nerd ttf-nerd-fonts-symbols-mono \
-        ttf-liberation otf-font-awesome \
+        ttf-liberation ttf-victor-mono-nerd otf-font-awesome \
         \
         sway swayidle swaylock swaybg foot foot-terminfo \
         waybar fuzzel brightnessctl xdg-user-dirs xdg-utils \
