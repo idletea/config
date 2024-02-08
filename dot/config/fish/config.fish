@@ -29,6 +29,7 @@ if status is-interactive
         alias podman="sudo podman"
     else
         set -ga PATH /opt/homebrew/bin
+        set -gx HOMEBREW_NO_AUTO_UPDATE 1
 
         alias ls="gls --color=auto --hide Desktop --hide Downloads \
             --hide Movies --hide Pictures --hide Documents \
