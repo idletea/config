@@ -4,8 +4,10 @@ set shell := ["fish", "-c"]
 default: editorconfig kitty mise nvim fish git
 
 editorconfig: (link-file "editorconfig")
-kitty: (link-file "config/kitty/kitty.conf")
 mise: (link-file "config/mise/config.toml")
+
+kitty: (link-file "config/kitty/kitty.conf") kitty-session
+kitty-session: (link-file "config/kitty/session.conf")
 
 git: git-config git-ignore
 git-config: (link-file "config/git/config" "dot-macos")
