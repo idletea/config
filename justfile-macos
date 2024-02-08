@@ -1,0 +1,43 @@
+# set ft=just
+set shell := ["fish", "-c"]
+
+default: editorconfig kitty mise nvim fish git
+
+editorconfig: (link-file "editorconfig")
+kitty: (link-file "config/kitty/kitty.conf")
+mise: (link-file "config/mise/config.toml")
+
+git: git-config git-ignore
+git-config: (link-file "config/git/config" "dot-macos")
+git-ignore: (link-file "config/git/ignore" "dot-macos")
+
+fish: (link-file "config/fish/config.fish") fish-prompt fish-k fish-kn
+fish-prompt: (link-file "config/fish/functions/fish_prompt.fish")
+fish-k: (link-file "config/fish/functions/k.fish")
+fish-kn: (link-file "config/fish/functions/kn.fish")
+
+nvim: (link-file "config/nvim/init.lua") nvim-lua
+nvim-lua: (link-file "config/nvim/lua/keymap.lua") nvim-plugins
+nvim-plugins: nvim-plugins-init nvim-lualine nvim-mini nvim-cmp nvim-lspconfig nvim-telescope nvim-trouble nvim-which-key
+nvim-plugins-init: (link-file "config/nvim/lua/plugins/init.lua")
+nvim-lualine: (link-file "config/nvim/lua/plugins/lualine.lua")
+nvim-mini: (link-file "config/nvim/lua/plugins/mini.lua")
+nvim-cmp: (link-file "config/nvim/lua/plugins/nvim-cmp.lua")
+nvim-lspconfig: (link-file "config/nvim/lua/plugins/nvim-lspconfig.lua")
+nvim-telescope: (link-file "config/nvim/lua/plugins/telescope.lua")
+nvim-trouble: (link-file "config/nvim/lua/plugins/trouble.lua")
+nvim-which-key: (link-file "config/nvim/lua/plugins/which-key.lua")
+
+link-file path from="dot":
+    #!/usr/bin/env fish
+    if not test -d {{from}}/{{path}}
+        set -l fullpath (realpath {{from}}/{{path}})
+        set -l target (echo "$HOME/.{{path}}")
+        set -l dir (dirname $target)
+        mkdir -p $dir
+        if test -h $target
+            just msg "$target already symlinked" "noop"
+        else
+            just cmd "ln -s $fullpath $target"
+        end
+    end

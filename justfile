@@ -5,7 +5,7 @@ default: not-macos packages system-config config-files latest-releases
 
 ## don't run on macos
 not-macos:
-    #!/usr/bin/fish
+    #!/usr/bin/env fish
     if test (uname) != "Linux"; exit 1; end
 
 ## packages
