@@ -1,10 +1,11 @@
 # set ft=just
 set shell := ["fish", "-c"]
 
-default: editorconfig kitty mise nvim fish git
+default: editorconfig kitty mise nvim fish git aerospace
 
 editorconfig: (link-file "editorconfig")
 mise: (link-file "config/mise/config.toml")
+aerospace: (link-file "config/aerospace/aerospace.toml" "dot-macos")
 
 kitty: (link-file "config/kitty/kitty.conf") kitty-session
 kitty-session: (link-file "config/kitty/session.conf")
