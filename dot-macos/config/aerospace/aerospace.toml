@@ -9,7 +9,8 @@ gaps.outer.top =        4
 gaps.outer.right =      4
 
 [mode.main.binding]
-alt-enter = 'exec-and-forget /opt/homebrew/bin/kitty -1'
+alt-enter = 'exec-and-forget /opt/homebrew/bin/kitty -1 -d /Users/tkerr'
+alt-shift-q = 'close'
 
 alt-h = 'focus left'
 alt-j = 'focus down'
