@@ -7,7 +7,6 @@ if status is-interactive
     fish_vi_key_bindings
 
     alias j="just"
-    alias ls="ls --color=auto"
     alias mr="mise run --"
 
     # system specific things
@@ -25,6 +24,7 @@ if status is-interactive
         end
 
         alias ip="ip -c=always"
+        alias ls="ls --color=auto"
         alias pacman="sudo pacman"
         alias podman="sudo podman"
     else
