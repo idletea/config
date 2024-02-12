@@ -18,7 +18,7 @@ gaps.outer.right =      4
 7 = ['ls32r75', 'built-in']
 8 = ['ls32r75', 'built-in']
 9 = 'built-in'
-10 = 's27d590'
+10 = ['s27d590', 'built-in']
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget /opt/homebrew/bin/kitty -1 -d /Users/tkerr'
