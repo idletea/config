@@ -8,6 +8,18 @@ gaps.outer.bottom =     4
 gaps.outer.top =        4
 gaps.outer.right =      4
 
+[workspace-to-monitor-force-assignment]
+1 = ['ls32r75', 'built-in']
+2 = ['ls32r75', 'built-in']
+3 = ['ls32r75', 'built-in']
+4 = ['ls32r75', 'built-in']
+5 = ['ls32r75', 'built-in']
+6 = ['ls32r75', 'built-in']
+7 = ['ls32r75', 'built-in']
+8 = ['ls32r75', 'built-in']
+9 = 'built-in'
+10 = 's27d590'
+
 [mode.main.binding]
 alt-enter = 'exec-and-forget /opt/homebrew/bin/kitty -1 -d /Users/tkerr'
 alt-shift-q = 'close'
