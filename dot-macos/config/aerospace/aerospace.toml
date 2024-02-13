@@ -1,12 +1,16 @@
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-gaps.inner.horizontal = 8
-gaps.inner.vertical =   8
-gaps.outer.left =       4
-gaps.outer.bottom =     4
-gaps.outer.top =        4
-gaps.outer.right =      4
+gaps.inner.horizontal = 12
+gaps.inner.vertical =   12
+gaps.outer.left =       8
+gaps.outer.bottom =     8
+gaps.outer.top =        8
+gaps.outer.right =      8
+
+after-startup-command = [
+    'exec-and-forget /opt/homebrew/bin/borders active_color=0xffa3be8c inactive_color=0xff434c5e width=4.0'
+]
 
 [workspace-to-monitor-force-assignment]
 1 = ['ls32r75', 'built-in']
@@ -36,10 +40,10 @@ alt-shift-l = 'move right'
 
 alt-f = 'fullscreen'
 
-ctrl-shift-h = 'split horizontal'
-ctrl-shift-j = 'split vertical'
-ctrl-shift-k = 'split vertical'
-ctrl-shift-l = 'split horizontal'
+ctrl-alt-h = 'split horizontal'
+ctrl-alt-j = 'split vertical'
+ctrl-alt-k = 'split vertical'
+ctrl-alt-l = 'split horizontal'
 
 alt-s = 'layout v_accordion' # 'layout stacking' in i3
 alt-w = 'layout h_accordion' # 'layout tabbed' in i3
