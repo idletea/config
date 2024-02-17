@@ -1,5 +1,7 @@
 {
     "layer": "top",
+    "output": "*",
+
     "position": "top",
     "height": 26,
     "margin": 0,
@@ -30,7 +32,7 @@
         "scroll-step": 2,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphones": "",
             "handsfree": "",

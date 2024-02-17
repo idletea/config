@@ -18,6 +18,7 @@ if status is-interactive
     if test "$linux" = "true"
         set -gx TERM xterm-256color
         set -ga PATH $XDG_DATA_HOME/mise/installs/1password-cli/latest/bin
+        set -gx MISE_POETRY_AUTO_INSTALL 1
 
         if which mise &>/dev/null
             mise activate fish | source

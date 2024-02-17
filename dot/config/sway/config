@@ -2,6 +2,8 @@
 output eDP-1 scale 1.5
 output "*" background /home/terry/.config/wallpaper fill
 
+output DP-5 position -1504,0
+
 input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     scroll_factor 1.2
     dwt disabled
@@ -11,7 +13,7 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
 font           pango:Iosevka Nerd Font 10
 gaps           inner 4
 gaps           outer 2
-default_border pixel 2
+default_border pixel 4
 # nord                    border    bg        text      indicator child_border
 client.focused            #6f8fb4   #6f8fb4   #2d3241   #6f8fb4   #6f8fb4
 client.focused_inactive   #2d3241   #dfe3ec   #b04b57   #2d3241   #2d3241
