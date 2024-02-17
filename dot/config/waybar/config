@@ -1,12 +1,10 @@
 {
     "layer": "top",
-    "output": "*",
-
+    "output": ["*"],
     "position": "top",
     "height": 26,
     "margin": 0,
     "spacing": 16,
-    "output": ["eDP-1"],
 
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["cpu", "memory"],
