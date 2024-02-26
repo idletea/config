@@ -10,7 +10,14 @@ function fish_prompt
         if test -n "$__git_toplevel"
             set -f name (basename $__git_toplevel)
         else
-            set -f name (basename $VIRTUAL_ENV)
+            if test "$POETRY_ACTIVE" = "1"
+                set -l base (basename $VIRTUAL_ENV)
+                set -l parts (string split "-" $base)
+                set -l poetry_suffix "-$parts[-3]-$parts[-2]-$parts[-1]"
+                set -f name "|"(string replace -- "$poetry_suffix" "" $base)"|"
+            else
+                set -f name (basename $VIRTUAL_ENV)
+            end
         end
         printf " %s$name%s" \
             (set_color yellow) (set_color normal)
@@ -18,7 +25,18 @@ function fish_prompt
 
     set -f __branch (git branch --show-current 2>/dev/null)
     if test -n "$__branch"
-        printf " $__branch"
+        set issue_parts (string match \
+            --regex "(feature|bug|chore)/(sc-\d+)/(.*)" $__branch \
+            | tail -n 3)
+        set issue_type $issue_parts[1]
+        set issue_id $issue_parts[2]
+        set issue_name $issue_parts[3]
+
+        if test -n "$issue_id"
+            printf " |$issue_id|"
+        else
+            printf " $__branch"
+        end
     end
 
     if test -n "$KUBECTL_NAMESPACE"

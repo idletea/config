@@ -2,12 +2,14 @@ set -g fish_greeting
 
 set -ga PATH $HOME/.local/bin
 set -gx EDITOR (which nvim)
+set -gx PYTHONBREAKPOINT ipdb.set_trace
 
 if status is-interactive
     fish_vi_key_bindings
 
     alias j="just"
     alias mr="mise run --"
+    alias fnvim="nvim (fzf)"
 
     # system specific things
     set linux "false"
