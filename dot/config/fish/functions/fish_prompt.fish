@@ -1,29 +1,45 @@
 function fish_prompt
+    ##########
+    ## context
+
+    set -f __git_toplevel (basename \
+        (git rev-parse --show-toplevel 2>/dev/null) \
+        2>/dev/null)
+    set -f __branch (git branch --show-current 2>/dev/null)
+    if test -n "$__branch"
+        set __issue_parts (string match \
+            --regex "(feature|bug|chore)/(sc-\d+)/(.*)" $__branch \
+            | tail -n 3)
+        set -f __issue_type $__issue_parts[1]
+        set -f __issue_id $__issue_parts[2]
+        set -f __issue_name $__issue_parts[3]
+    end
+
+    ###############
+    ## build prompt
+
     set -f last_status "$status"
     printf "%s%s%s" \
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 
     if test -n "$VIRTUAL_ENV"
-        pushd $VIRTUAL_ENV
-        set -f __git_toplevel (git rev-parse --show-toplevel 2>/dev/null)
-        popd
-        if test -n "$__git_toplevel"
-            set -f name (basename $__git_toplevel)
+        if test "$POETRY_ACTIVE" = 1; and test -n "$__git_toplevel"
+            set -f name "|$__git_toplevel|"
         else
-            if test "$POETRY_ACTIVE" = "1"
-                set -l base (basename $VIRTUAL_ENV)
-                set -l parts (string split "-" $base)
-                set -l poetry_suffix "-$parts[-3]-$parts[-2]-$parts[-1]"
-                set -f name "|"(string replace -- "$poetry_suffix" "" $base)"|"
+            pushd $VIRTUAL_ENV
+            set -f __venv_git_toplevel (git rev-parse --show-toplevel 2>/dev/null)
+            popd
+            if test -n "$__venv_git_toplevel"
+                set -f name (basename $__venv_git_toplevel)
             else
                 set -f name (basename $VIRTUAL_ENV)
             end
         end
+
         printf " %s$name%s" \
             (set_color yellow) (set_color normal)
     end
 
-    set -f __branch (git branch --show-current 2>/dev/null)
     if test -n "$__branch"
         set issue_parts (string match \
             --regex "(feature|bug|chore)/(sc-\d+)/(.*)" $__branch \
