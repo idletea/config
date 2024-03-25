@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+    "output": ["*"],
+    "position": "top",
+    "height": 26,
+    "margin": 0,
+    "spacing": 16,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["cpu", "memory"],
+    "modules-right": ["network", "pulseaudio", "battery", "clock"],
+
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}%",
+        "max-length": 7,
+        "min-length": 7
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {used} GiB",
+        "max-length": 12,
+        "min-length": 12
+    },
+    "network": {
+        "format-wifi": " ",
+        "format-disconnected": " "
+    },
+    "pulseaudio": {
+        "scroll-step": 2,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"]
+    },
+    "clock": {
+        "format": "{:%H:%M} ",
+        "format-alt": "{:%Y-%m-%d}"
+    }
+}

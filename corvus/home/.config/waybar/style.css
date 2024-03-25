@@ -1,0 +1,41 @@
+/* colors */
+@define-color base  #01121a;
+@define-color text  #f6f0f0;
+@define-color tone1 #201922;
+@define-color tone2 #4f242e;
+@define-color tone3 #672934;
+@define-color tone4 #986e75;
+@define-color tone5 #cab386;
+
+/* sections */
+* {
+    background:    @base;
+    color:         @text;
+    border:        none;
+    border-radius: 0;
+    font-family:   "Iosevka Term";
+}
+
+#workspaces button {
+    color: @text;
+    padding: 0 9px;
+}
+#workspaces button.focused {
+    font-weight: bold;
+    border-bottom: 2px solid @text;
+}
+#workspaces button.urgent {
+    font-weight: bold;
+    color: @tone5;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#mode {
+    padding: 0 8px;
+    color: @text;
+    background: @tone3;
+    border-bottom: 2px solid @text;
+}

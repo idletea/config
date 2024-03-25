@@ -1,0 +1,28 @@
+#!/bin/bash
+set -euo pipefail
+
+if [ "$(id -u)" -ne "0" ]; then
+    echo "-- must be run as root"
+    exit 1
+fi
+
+USERNAME="terry"
+SUDOERS_FILE="wheel"
+
+echo "-- installing prerequisites"
+pacman -S --noconfirm --needed base-devel fish just
+
+if ! cat /etc/passwd | grep $USERNAME 2>&1 >/dev/null; then
+    echo "-- creating user $USERNAME"
+    useradd --create-home --shell /usr/bin/bash -G wheel $USERNAME
+    passwd $USERNAME
+else
+    echo "-- user $USERNAME already exists"
+fi
+
+echo "-- writing /etc/sudoers.d/$SUDOERS_FILE"
+cat << EOF >/etc/sudoers.d/$SUDOERS_FILE
+Defaults timestamp_timeout=120
+%wheel ALL=(ALL) ALL
+EOF
+chmod 440 /etc/sudoers.d/$SUDOERS_FILE
