@@ -10,6 +10,7 @@ vim.opt.clipboard  = "unnamedplus"
 vim.opt.backupdir  = state_dir .. "backup/"
 vim.opt.undodir    = state_dir .. "undo/"
 vim.opt.cursorline = false
+vim.opt.shortmess  = "aI"
 
 require("pkgs/mini")
 

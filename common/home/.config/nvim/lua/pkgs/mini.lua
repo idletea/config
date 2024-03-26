@@ -20,10 +20,6 @@ MiniDeps.now(function()
     require("mini.basics").setup()
     require("mini.statusline").setup()
     require("mini.tabline").setup()
-    require("mini.starter").setup({
-        header = "",
-        footer = "",
-    })
 end)
 
 MiniDeps.later(function()
