@@ -1,0 +1,34 @@
+/* colors */
+@define-color base  #eceff4;
+@define-color text  #2e3440;
+@define-color mode-fg #eceff4;
+@define-color mode-bg #b48ead;
+
+/* sections */
+* {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: @base;
+    color: @text;
+    font-family: "Lilex Nerd Font Mono";
+    font-size: 14px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+}
+#workspaces button.focused {
+    font-weight: bold;
+    border-bottom: 2px solid @text;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#mode {
+    padding: 0 8px;
+    background: @mode-bg;
+    color: @mode-fg;
+}

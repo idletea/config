@@ -1,0 +1,2 @@
+[[ $- != *i* ]] && return
+[[ -z "$NOFISH" ]] && exec fish

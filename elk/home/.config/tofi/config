@@ -1,0 +1,6 @@
+# font
+font = "/usr/share/fonts/noto/NotoSansMono-Regular.ttf"
+font-size = 12
+
+# prompt
+prompt-text = "run » "
