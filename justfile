@@ -1,9 +1,9 @@
 default:
-    #!/usr/bin/fish
+    #!/usr/bin/env fish
     if test (uname) = "Linux"
         exec just elk
     else
-        exec just draught
+        exec just donkey
     end
 
 #########
@@ -87,3 +87,26 @@ user-units:
     source lib.fish
     __msg --heading systemd units
     __systemd_user_enable "ssh-agent.service"
+
+############
+## donkey ##
+############
+
+donkey: donkey-link-config donkey-brew-packages
+
+donkey-link-config:
+    #!/usr/bin/env fish
+    source lib.fish
+    __msg --heading config files
+    __link_recursive "common/home"
+    __link_recursive "donkey/home"
+
+donkey-brew-packages:
+    #!/usr/bin/env fish
+    source lib.fish
+    __msg --heading brew packages
+    __brew_install \
+        fish neovim fd bash-language-server yaml-language-server \
+        fzf ripgrep git-delta coreutils
+    __brew_install_cask \
+        nikitabobko/tap/aerospace 1password-cli

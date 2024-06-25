@@ -125,3 +125,53 @@ function __systemd_user_enable -a unit
         __msg --noop "$unit already enabled"
     end
 end
+
+function __brew_packages_install_query
+    set -f packages $argv
+
+    set -g __brew_pacakges_present
+    set -g __brew_packages_missing
+    for package in $packages
+        set -l separated (string split "/" "$package"); or true
+        set -l name "$separated[-1]"
+        if test -e "/opt/homebrew/Cellar/$name"; or test -e "/opt/homebrew/Caskroom/$name"
+            set -ga __brew_packages_present "$name"
+        else
+            set -ga __brew_packages_missing "$name"
+        end
+    end
+
+    if test (count $__brew_packages_missing) -eq 0
+        return 0
+    else
+        return 1
+    end
+end
+
+function __brew_install
+    set -f packages $argv
+
+    if __brew_packages_install_query $packages
+        __msg --noop "packages already installed"
+        return 0
+    end
+
+    if test (count $__pacman_packages_present) -gt 0
+        __msg --noop "packages already installed: $__brew_packages_present"
+    end
+    __msg --eval "brew install $__brew_packages_missing"
+end
+
+function __brew_install_cask
+    set -f packages $argv
+
+    if __brew_packages_install_query $packages
+        __msg --noop "casks already installed"
+        return 0
+    end
+
+    if test (count $__pacman_packages_present) -gt 0
+        __msg --noop "casks already installed: $__brew_packages_present"
+    end
+    __msg --eval "brew install --cask $__brew_packages_missing"
+end
