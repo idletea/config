@@ -67,6 +67,7 @@ later(function()
     lsp.tsserver.setup{ capabilities = capabilities }
     lsp.bashls.setup{ capabilities = capabilities }
     lsp.pylsp.setup{ capabilities = capabilities }
+    lsp.lua_ls.setup{ capabilities = capabilities }
     vim.cmd [[LspStart]]
 
     -- misc

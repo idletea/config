@@ -67,11 +67,16 @@ packages:
         mako
     set apps \
         firefox-developer-edition
+    set lsp \
+        shellcheck bash-language-server yaml-language-server \
+        taplo clang gopls lua-language-server python-lsp-server \
+        vscode-css-languageserver vscode-html-languageserver \
+        rust-analyzer typescript-language-server
     set aur \
         tofi
 
     __pacman_install \
-        $base $utils $fonts $audio $de $apps
+        $base $utils $fonts $audio $de $apps $lsp
     __pacman_aur_install \
         $aur
 
@@ -99,11 +104,11 @@ gpg-dir:
         __msg --eval "chmod 700 $HOME/.local/share/gnupg"
     end
 
-emacs-experiment:
+helix-experiment:
     #!/usr/bin/fish
     source lib.fish
-    __msg --heading "emacs?"
-    __pacman_install emacs-wayland
+    __msg --heading "helix?"
+    __pacman_install helix
 
 ############
 ## donkey ##

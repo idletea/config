@@ -1,0 +1,14 @@
+theme = "catppuccin_mocha"
+
+[editor]
+cursorline = true
+text-width = 88
+bufferline = "multiple"
+auto-pairs = false
+
+[editor.lsp]
+display-inlay-hints = true
+snippets = false
+
+[editor.indent-guides]
+render = true
