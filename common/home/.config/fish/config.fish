@@ -17,14 +17,17 @@ function __macos
     set -ax PATH /Users/tkerr/devex/bin
 
     set -gx HOMEBREW_NO_AUTO_UPDATE 1
-    set -gx DEVEX_SHELLENV_LOADED 1
+
+    if test -e "/Users/tkerr/devex/shellenv.fish"
+        source /Users/tkerr/devex/shellenv.fish
+    end
 
     set -l prefix (brew --prefix)
     set -l gcs_inc "$prefix/share/google-cloud-sdk/path.fish.inc"
     if test -e "$gcs_inc"; source "$gcs_inc"; end
 
-    alias ls="gls --color=auto --hide Desktop --hide Downloads \
-        --hide Movies --hide Picture --hide Documents \
+    alias ls "gls --color=auto --hide Desktop --hide Downloads \
+        --hide Movies --hide Pictures --hide Documents \
         --hide Library --hide Music --hide Public"
 end
 

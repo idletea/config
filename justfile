@@ -129,6 +129,6 @@ donkey-brew-packages:
     __msg --heading brew packages
     __brew_install \
         fish neovim fd bash-language-server yaml-language-server \
-        fzf ripgrep git-delta coreutils
+        fzf ripgrep git-delta coreutils ipcalc helix
     __brew_install_cask \
         nikitabobko/tap/aerospace 1password-cli
