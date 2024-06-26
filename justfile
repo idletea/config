@@ -10,7 +10,7 @@ default:
 ## elk ##
 #########
 
-elk: sys-config link-config packages user-units
+elk: sys-config link-config packages user-units gpg-dir
 
 sys-config:
     #!/usr/bin/fish
@@ -87,6 +87,17 @@ user-units:
     source lib.fish
     __msg --heading systemd units
     __systemd_user_enable "ssh-agent.service"
+
+gpg-dir:
+    #!/usr/bin/fish
+    source lib.fish
+    __msg --heading gpg dir
+    if test -e $HOME/
+        __msg --noop "already initialized"
+    else
+        __msg --eval "mkdir -p $HOME/.local/share/gnupg"
+        __msg --eval "chmod 700 $HOME/.local/share/gnupg"
+    end
 
 ############
 ## donkey ##
