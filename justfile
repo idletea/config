@@ -99,6 +99,12 @@ gpg-dir:
         __msg --eval "chmod 700 $HOME/.local/share/gnupg"
     end
 
+emacs-experiment:
+    #!/usr/bin/fish
+    source lib.fish
+    __msg --heading "emacs?"
+    __pacman_install emacs-wayland
+
 ############
 ## donkey ##
 ############
