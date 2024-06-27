@@ -3,11 +3,8 @@ local map_n = function(k, c, desc)
     keymap.set("n", k, c, { silent = true, desc = desc })
 end
 
-vim.o.timeout = true
-vim.o.timeoutlen = 200
-
 map_n("<c-l>", [[<cmd>nohl<cr>]], "clear highlighting")
-map_n("<c-p>", MiniPick.builtin.files, "files")
+-- map_n("<c-p>", MiniPick.builtin.files, "files")
 
 -- bare keys
 require("which-key").register({
@@ -28,7 +25,7 @@ require("which-key").register({
     },
     f = {
         name = "files",
-        t = { MiniFiles.open, "browse files" },
+        -- t = { MiniFiles.open, "browse files" },
         m = { lsp.buf.format, "format buffer" },
     },
     l = {
@@ -36,18 +33,18 @@ require("which-key").register({
         a = { lsp.buf.code_action, "code action" },
         f = { lsp.buf.format, "format" },
         r = { lsp.buf.rename, "rename" },
-        o = { [[<cmd>Outline<cr>]], "outline" },
+        -- o = { [[<cmd>Outline<cr>]], "outline" },
     },
     r = {
         name = "misc",
-        g = { MiniPick.builtin.grep_live, "grep" },
+        -- g = { MiniPick.builtin.grep_live, "grep" },
     },
     s = {
         name = "select",
-        f = { MiniPick.builtin.files, "files" },
-        b = { MiniPick.builtin.buffers, "buffers" },
-        l = { MiniPick.registry.lsp, "lsp" },
-        m = { MiniPick.registry.marks, "marks" },
+        -- f = { MiniPick.builtin.files, "files" },
+        -- b = { MiniPick.builtin.buffers, "buffers" },
+        -- l = { MiniPick.registry.lsp, "lsp" },
+        -- m = { MiniPick.registry.marks, "marks" },
     },
     t = {
         name = "tab",
@@ -57,5 +54,3 @@ require("which-key").register({
         c = { [[<cmd>tabclose<cr>]], "close tab" },
     },
 }, { prefix = "<leader>" })
-
-which_key.setup{}
