@@ -1,0 +1,73 @@
+{
+    "output": ["*"],
+    "spacing": 12,
+    "layer": "top",
+    "height": 18,
+    "modules-left": ["sway/workspaces", "sway/mode", "privacy"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "network", "backlight", "wireplumber", "battery", "tray"],
+
+    /* modules-left */
+    "sway/workspaces": {
+        "all-outputs": false
+    },
+    "privacy": {
+        "icon-size": 14,
+        "modules": [
+            { "type": "screenshare" },
+            { "type": "audio-in" }
+        ]
+    },
+
+    /* modules-center */
+    "clock": {
+		"tooltip": false,
+        "format": "<i>{:%Y-%m-%d</i> <b>%H:%M</b>}"
+    },
+
+    /* modules-right */
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": " {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueberry"
+    },
+    "network": {
+        "interface": "wlp*",
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": "󰖪 <none>",
+        "tooltip-format": "{ifname} - {ipaddr}/{cidr}"
+    },
+	"backlight": {
+		"format": " {}%",
+		"interval": 12,
+        "on-scroll-up": "brightnessctl set +1%",
+		"on-scroll-down": "brightnessctl set 1%-"
+	},
+	"wireplumber": {
+		"tooltip": false,
+        "on-click": "pavucontrol",
+        "scroll-step": 2,
+		"format": "󰓃 {volume}%",
+		"format-muted": " {volume}%"
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "󱊣 {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time}"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}
