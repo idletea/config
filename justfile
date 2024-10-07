@@ -88,3 +88,28 @@ link-config:
     log.section "link configs"
     fs.recursive "common/home"
     fs.recursive "linux/home"
+
+###########
+## macos ##
+###########
+macos: macos-brew macos-link-config
+
+macos-brew:
+    #!/usr/bin/env lua
+    local log, brew = require("config.log"), require("config.brew")
+    log.section "brew packages"
+    brew.install {
+        "fish", "neovim", "fd", "bash-language-server", "yaml-language-server",
+        "fzf", "ripgrep", "git-delta", "coreutils", "ipcalc", "procs", "hyperfine",
+    }
+    brew.install_casks {
+        "aerospace", "1password-cli", "font-blex-mono-nerd-font",
+        "font-iosevka-term-nerd-font",
+    }
+
+macos-link-config:
+    #!/usr/bin/env lua
+    local log, fs = require("config.log"), require("config.fs")
+    log.section "link configs"
+    fs.recursive "common/home"
+    fs.recursive "macos/home"
