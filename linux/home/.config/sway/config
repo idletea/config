@@ -1,6 +1,6 @@
 ## io
 output "*" bg /home/idte/.config/wallpaper fill
-output eDP-1 scale 1.5
+output eDP-1 scale 1.35
 
 input type:touchpad {
     tap enabled

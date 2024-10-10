@@ -13,3 +13,5 @@ vim.loader.enable()
 require("init.mini")
 require("init.loader")
     .load("config")
+
+vim.cmd [[au BufNewFile,BufRead *.tofu set ft=terraform]]

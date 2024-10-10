@@ -56,6 +56,7 @@
 		"format-muted": " {volume}%"
 	},
     "battery": {
+		"interval": 12,
         "states": {
             "good": 95,
             "warning": 30,

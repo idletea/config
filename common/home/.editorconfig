@@ -11,5 +11,5 @@ trim_trailing_whitespace = true
 [{M,m}akefile,*.go]
 indent_style = tab
 
-[*.{proto,html,json,tmpl,yaml,yml,erb,rb,tf,el,typst}]
+[*.{proto,html,json,tmpl,yaml,yml,erb,rb,tf,tofu,el,typst}]
 indent_size = 2
