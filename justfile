@@ -26,6 +26,9 @@ sys-config:
     fs.sys_file {
         src = "linux/sys/xdg.sh",
         dst = "/etc/profile.d/xdg.sh" }
+    fs.sys_file {
+        src = "linux/sys/tuned_active_profile",
+        dst = "/etc/tuned/active_profile" }
 
 packages:
     #!/usr/bin/lua
@@ -47,6 +50,8 @@ packages:
         -- desktop
         "sway", "swaybg", "kitty", "kitty-terminfo", "waybar", "xorg-xwayland",
         "xdg-desktop-portal-wlr", "xdg-desktop-portal-gtk", "wofi", "wl-clipboard",
+        -- power management
+        "tuned", "wireless_tools",
         -- apps
         "firefox-developer-edition" }
 
@@ -55,6 +60,7 @@ services:
     local log, systemd = require("config.log"), require("config.systemd")
     log.section "services"
     systemd.enable "bluetooth.service"
+    systemd.enable "tuned.service"
     systemd.user_enable "ssh-agent.service"
     systemd.user_enable "pipewire-pulse.service"
 

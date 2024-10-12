@@ -9,9 +9,13 @@ vim.opt.signcolumn  = "yes"
 vim.opt.showmode    = false
 vim.opt.scrolloff   = 4
 
-vim.loader.enable()
-require("init.mini")
-require("init.loader")
-    .load("config")
-
 vim.cmd [[au BufNewFile,BufRead *.tofu set ft=terraform]]
+
+vim.loader.enable()
+
+require("init.mini")
+require("init.simple")
+require("init.nvim-tree")
+require("init.treesitter")
+require("init.lsp")
+require("init.keymap")
