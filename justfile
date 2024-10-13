@@ -39,7 +39,7 @@ packages:
         "base-devel", "man-db", "openssh", "acpi", "bash-completion", "fish", "unzip",
         -- utils
         "bind", "neovim", "ripgrep", "jq", "fzf", "fd", "git", "git-delta", "lazygit",
-        "procs", "podman", "brightnessctl", "ipcalc", "python", "python-pipx",
+        "procs", "podman", "brightnessctl", "ipcalc", "python", "python-pipx", "yq",
         -- fonts
         "ttf-liberation", "otf-font-awesome", "noto-fonts", "noto-fonts-emoji",
         "noto-fonts-extra", "noto-fonts-cjk", "ttf-iosevka-nerd",
