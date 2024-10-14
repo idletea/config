@@ -9,6 +9,11 @@ imap("<c-p>", cmd(":Pick files"), "Pick files")
 nmap("<c-p>", cmd(":Pick files"), "Pick files")
 nmap("<leader>rg", cmd(":Pick grep_live"), "Live grep")
 
+imap("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
+nmap("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
+imap("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
+nmap("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
+
 -- buffer
 nmap("<leader>bd", cmd(":bd"), "Buffer delete")
 nmap("<leader>bn", cmd(":bn"), "Buffer next")
@@ -52,6 +57,7 @@ MiniClue.setup({
         MiniClue.gen_clues.z(),
 
         { mode = "n", keys = "<leader>b", desc = "+Buffer" },
+        { mode = "f", keys = "<leader>b", desc = "+Filetree" },
     },
     window = {
         delay = 150 ,
