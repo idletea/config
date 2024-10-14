@@ -14,9 +14,6 @@ require("mini.deps").setup({ path = { package = path_package } })
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
 
-require("mini.pick").setup()
-vim.ui.select = MiniPick.ui_select
-
 require("mini.statusline").setup()
 require("mini.tabline").setup()
 require("mini.bufremove").setup()

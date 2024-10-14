@@ -4,20 +4,32 @@ local keymap = function(mode, lhs, rhs, desc)
 end
 local imap = function(lhs, rhs, desc) keymap("i", lhs, rhs, desc) end
 local nmap = function(lhs, rhs, desc) keymap("n", lhs, rhs, desc) end
+local bmap = function(lhs, rhs, desc)
+    imap(lhs, rhs, desc)
+    nmap(lhs, rhs, desc)
+end
 
-imap("<c-p>", cmd(":Pick files"), "Pick files")
-nmap("<c-p>", cmd(":Pick files"), "Pick files")
-nmap("<leader>rg", cmd(":Pick grep_live"), "Live grep")
-
-imap("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
-nmap("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
-imap("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
-nmap("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
+bmap("<c-p>", cmd(":FzfLua files"), "Pick files")
+bmap("<c-k>", vim.lsp.buf.signature_help, "Lsp signature help")
+bmap("<leader>rg", cmd(":FzfLua live_grep"), "Live grep")
+bmap("<leader>fz", cmd(":FzfLua builtin"), "Fzf")
 
 -- buffer
-nmap("<leader>bd", cmd(":bd"), "Buffer delete")
-nmap("<leader>bn", cmd(":bn"), "Buffer next")
-nmap("<leader>bp", cmd(":bp"), "Buffer prev")
+bmap("<leader>bd", cmd(":bd"), "Buffer delete")
+bmap("<leader>bn", cmd(":bn"), "Buffer next")
+bmap("<leader>bp", cmd(":bp"), "Buffer prev")
+
+-- filetree
+bmap("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
+bmap("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
+
+-- lsp
+bmap("<leader>la", vim.lsp.buf.code_action, "Lsp code actions")
+bmap("<leader>lf", vim.lsp.buf.format, "Lsp format")
+bmap("<leader>lr", vim.lsp.buf.rename, "Lsp rename")
+bmap("<leader>li", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, "Lsp inlay hints")
 
 MiniClue.setup({
     triggers = {
@@ -56,8 +68,14 @@ MiniClue.setup({
         MiniClue.gen_clues.windows(),
         MiniClue.gen_clues.z(),
 
+        { mode = "i", keys = "<leader>r", desc = "+Misc" },
+        { mode = "n", keys = "<leader>r", desc = "+Misc" },
+        { mode = "i", keys = "<leader>b", desc = "+Buffer" },
         { mode = "n", keys = "<leader>b", desc = "+Buffer" },
-        { mode = "f", keys = "<leader>b", desc = "+Filetree" },
+        { mode = "i", keys = "<leader>f", desc = "+Filetree" },
+        { mode = "n", keys = "<leader>f", desc = "+Filetree" },
+        { mode = "i", keys = "<leader>l", desc = "+Lsp" },
+        { mode = "n", keys = "<leader>l", desc = "+Lsp" },
     },
     window = {
         delay = 150 ,
