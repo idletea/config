@@ -24,6 +24,12 @@ map("<leader>bd", cmd(":bd"), "Buffer delete")
 map("<leader>bn", cmd(":bn"), "Buffer next")
 map("<leader>bp", cmd(":bp"), "Buffer prev")
 
+-- tab
+map("<leader>tt", cmd(":tabnew"), "Tab new")
+map("<leader>tc", cmd(":tabclose"), "Tab close")
+map("<leader>tn", cmd(":tabnext"), "Tab next")
+map("<leader>tp", cmd(":tabprevious"), "Tab previous")
+
 -- filetree
 map("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
 map("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
