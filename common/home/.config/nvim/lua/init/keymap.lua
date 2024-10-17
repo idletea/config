@@ -19,6 +19,13 @@ map("<c-k>", vim.lsp.buf.signature_help, "Lsp signature help")
 map("<leader>rg", fzf.live_grep, "Live grep")
 map("<leader>fz", fzf.builtin, "Fzf")
 
+-- goto
+map("gd", vim.lsp.buf.definition, "Go to definition")
+map("gD", vim.lsp.buf.declaration, "Go to declaration")
+map("gi", vim.lsp.buf.implementation, "Go to implementation")
+map("gr", vim.lsp.buf.references, "Go to references")
+map("gt", vim.lsp.buf.type_definition, "Go to type def")
+
 -- buffer
 map("<leader>bd", cmd(":bd"), "Buffer delete")
 map("<leader>bn", cmd(":bn"), "Buffer next")
