@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if ! env | grep "MISE_SHELL=" >/dev/null; then
+    echo "! mise not activated"
+    exit 1; fi
+
+if ! command -v pyinfra >/dev/null; then
+    uv pip install pyinfra; fi
+
+pyinfra @local --yes states/apply.py
