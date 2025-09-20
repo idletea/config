@@ -102,6 +102,21 @@ def packages(machine: Machine):
                 "xdg-desktop-portal-gtk",
             ]
         )
+    elif machine == Machine.KAGRENAC:
+        packages.extend([
+            # kde & related
+            "plasma-meta",
+            "sddm",
+            "sddm-kcm",
+            "qt5-declarative",
+            # kde apps
+            "ark",
+            "dolphin",
+            "dolphin-plugins",
+            "okular",
+            "gwenview",
+            "haruna",
+        ])
 
     pacman.packages(
         name="Pacman packages",
@@ -110,7 +125,7 @@ def packages(machine: Machine):
     )
 
 
-def services():
+def services(machine: Machine):
     systemd.service(
         name="User ssh agent",
         service="ssh-agent.service",
@@ -125,6 +140,16 @@ def services():
         enabled=True,
         _sudo=True,
     )
+
+    if machine == Machine.KAGRENAC:
+        systemd.service(
+            name="SDDM service",
+            service="sddm.service",
+            running=True,
+            enabled=True,
+            _sudo=True,
+        )
+
 
 
 def home_dir():
@@ -156,7 +181,7 @@ def sway():
 def apply(machine: Machine) -> None:
     sys_files()
     packages(machine)
-    services()
+    services(machine)
     home_dir()
     recursive_relative_symlink(
         src="states/common/home/",

@@ -8,6 +8,7 @@ from pyinfra.operations import files
 class Machine(Enum):
     MACK = "mack"
     LORKHAN = "lorkhan"
+    KAGRENAC = "kagrenac"
 
     @classmethod
     def determine(cls) -> Self:
