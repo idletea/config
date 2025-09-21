@@ -1,0 +1,9 @@
+[tools]
+kind = "latest"
+kubectl = "latest"
+
+python = "latest"
+"pipx:python-lsp-server" = { version = "latest", uvx_args = "--with python-lsp-ruff" }
+
+node = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
