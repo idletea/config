@@ -80,8 +80,8 @@ def packages(machine: Machine):
         "pavucontrol",
         # applications
         "firefox",
-        "kitty",
-        "kitty-terminfo",
+        "ghostty",
+        "ghostty-terminfo",
         "wl-clipboard",
         # bluetooth
         "bluez",
@@ -103,20 +103,23 @@ def packages(machine: Machine):
             ]
         )
     elif machine == Machine.KAGRENAC:
-        packages.extend([
-            # kde & related
-            "plasma-meta",
-            "sddm",
-            "sddm-kcm",
-            "qt5-declarative",
-            # kde apps
-            "ark",
-            "dolphin",
-            "dolphin-plugins",
-            "okular",
-            "gwenview",
-            "haruna",
-        ])
+        packages.extend(
+            [
+                # kde & related
+                "plasma-meta",
+                "sddm",
+                "sddm-kcm",
+                "qt5-declarative",
+                # kde apps
+                "ark",
+                "dolphin",
+                "dolphin-plugins",
+                "okular",
+                "gwenview",
+                # hardware
+                "nvidia-open",
+            ]
+        )
 
     pacman.packages(
         name="Pacman packages",
@@ -149,7 +152,6 @@ def services(machine: Machine):
             enabled=True,
             _sudo=True,
         )
-
 
 
 def home_dir():
