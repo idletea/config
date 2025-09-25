@@ -1,12 +1,12 @@
 from typing import assert_never
 
-from states import linux
+from states import linux, macos
 from states.utils import Machine
 
 
 match machine := Machine.determine():
     case Machine.MACK:
-        raise NotImplementedError()
+        macos.apply()
     case Machine.LORKHAN | Machine.KAGRENAC:
         linux.apply(machine)
     case _unreachable:
