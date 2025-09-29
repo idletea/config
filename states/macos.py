@@ -24,6 +24,7 @@ def apply() -> None:
             "ipcalc",
             "jj",
             "just",
+            "lsd",
             "podman",
             "procs",
             "ripgrep",

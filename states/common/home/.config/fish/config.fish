@@ -23,5 +23,7 @@ if status is-interactive
         fzf --fish | source
     end
 
+    alias ls="lsd --icon=never --group-directories-first"
+
     platform_config
 end
