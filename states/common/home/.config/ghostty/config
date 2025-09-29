@@ -1,11 +1,22 @@
+title = " "
 theme = "Kanagawa Dragon"
 
+# font
 font-family = "Iosevka NFM"
 font-size = 16
 
+# working dir
+window-inherit-working-directory = false
+working-directory = home
+
+# splits
+## split colours
+unfocused-split-fill = #666666
+split-divider-color = #888888
+## split opening
 keybind = super+s=new_split:right
 keybind = ctrl+super+s=new_split:down
-
+## split movement
 keybind = ctrl+super+h=goto_split:left
 keybind = ctrl+super+j=goto_split:down
 keybind = ctrl+super+k=goto_split:up
