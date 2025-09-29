@@ -1,4 +1,12 @@
 theme = "Kanagawa Dragon"
 
 font-family = "Iosevka NFM"
-font-size = 14
+font-size = 16
+
+keybind = super+s=new_split:right
+keybind = ctrl+super+s=new_split:down
+
+keybind = ctrl+super+h=goto_split:left
+keybind = ctrl+super+j=goto_split:down
+keybind = ctrl+super+k=goto_split:up
+keybind = ctrl+super+l=goto_split:right

@@ -57,6 +57,7 @@ def apply() -> None:
             "aerospace",
             "font-iosevka-term-nerd-font",
             "kitty",
+            "ghostty",
             "font-noto-sans-cjk",
             "podman-desktop",
             "spotify",
