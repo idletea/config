@@ -17,10 +17,10 @@ split-divider-color = #888888
 keybind = super+s=new_split:right
 keybind = ctrl+super+s=new_split:down
 ## split movement
-keybind = ctrl+super+h=goto_split:left
-keybind = ctrl+super+j=goto_split:down
-keybind = ctrl+super+k=goto_split:up
-keybind = ctrl+super+l=goto_split:right
+keybind = "ctrl+alt+h=goto_split:left"
+keybind = "ctrl+alt+j=goto_split:down"
+keybind = "ctrl+alt+k=goto_split:up"
+keybind = "ctrl+alt+l=goto_split:right"
 
 # claude
 keybind = shift+enter=text:\x1b\r
