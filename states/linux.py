@@ -80,8 +80,6 @@ def packages(machine: Machine):
         "pavucontrol",
         # applications
         "firefox",
-        "ghostty",
-        "ghostty-terminfo",
         "wl-clipboard",
         # bluetooth
         "bluez",
