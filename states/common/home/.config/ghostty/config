@@ -6,6 +6,7 @@ font-family = "Iosevka NFM"
 font-size = 16
 
 # working dir
+shell-integration = none
 window-inherit-working-directory = false
 working-directory = home
 
@@ -17,10 +18,10 @@ split-divider-color = #888888
 keybind = super+s=new_split:right
 keybind = ctrl+super+s=new_split:down
 ## split movement
-keybind = "ctrl+alt+h=goto_split:left"
-keybind = "ctrl+alt+j=goto_split:down"
-keybind = "ctrl+alt+k=goto_split:up"
-keybind = "ctrl+alt+l=goto_split:right"
+keybind = "ctrl+shift+h=goto_split:left"
+keybind = "ctrl+shift+j=goto_split:down"
+keybind = "ctrl+shift+k=goto_split:up"
+keybind = "ctrl+shift+l=goto_split:right"
 
 # claude
 keybind = shift+enter=text:\x1b\r
