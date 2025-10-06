@@ -14,7 +14,7 @@ after-startup-command = [
 ]
 
 [mode.main.binding]
-alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty -1'
+alt-enter = 'exec-and-forget /Applications/kitty.app/Contents/MacOS/kitty -1 -d /Users/tkerr/'
 alt-shift-q = 'close'
 
 alt-h = 'focus left'
