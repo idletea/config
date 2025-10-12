@@ -3,7 +3,7 @@ set -g fish_greeting
 if status is-interactive
     fish_vi_key_bindings
 
-    set -ax PATH "$HOME/.local/bin"
+    fish_add_path --prepend "$HOME/.local/bin"
 
     set -g __fish_git_prompt_show_informative_status 1
     set -g __fish_git_prompt_char_stateseparator "⋮"
