@@ -12,11 +12,10 @@ end
 -------------
 -- keymaps --
 -------------
-local fzf = require("fzf-lua")
+vim.g.mapleader = ";"
 
-map("<c-p>", fzf.files, "Pick files")
+map("<c-p>", cmd [[:Pick files]], "Pick files")
 map("<c-k>", vim.lsp.buf.signature_help, "Lsp signature help")
-map("<leader>fz", fzf.builtin, "Fzf")
 
 -- buffer
 map("<leader>bd", require("mini.bufremove").delete, "Buffer delete")
@@ -32,10 +31,6 @@ map("<leader>tc", cmd(":tabclose"), "Tab close")
 map("<leader>ft", cmd(":NvimTreeOpen"), "Filetree open")
 map("<leader>fc", cmd(":NvimTreeClose"), "Filetree close")
 
--- Fzf
-map("<leader>m", cmd(":FzfLua marks"), "Fzf Marks")
-map("<leader>j", cmd(":FzfLua jumps"), "Fzf Jumps")
-
 -- goto
 nmap("gd", vim.lsp.buf.definition, "Go to definition")
 nmap("gD", vim.lsp.buf.declaration, "Go to declaration")
@@ -44,13 +39,8 @@ nmap("gr", vim.lsp.buf.references, "Go to references")
 nmap("gt", vim.lsp.buf.type_definition, "Go to type def")
 
 -- ripgrep (search)
-map("<leader>rg", fzf.live_grep, "Live grep")
-map("<leader>rr", fzf.live_grep_resume, "Live grep resume")
-map("<leader>rd", fzf.diagnostics_document, "Diagnostics")
-map("<leader>rli", fzf.lsp_incoming_calls, "Lsp incoming calls")
-map("<leader>rlo", fzf.lsp_outgoing_calls, "Lsp outgoing calls")
-map("<leader>rls", fzf.lsp_live_workspace_symbols, "Lsp symbols")
-map("<leader>rlr", fzf.lsp_references, "Lsp references")
+map("<leader>rg", cmd [[:Pick grep_live]], "Live grep")
+map("<leader>rr", cmd [[:Pick resume]], "Live grep resume")
 
 -- lsp
 map("<leader>la", vim.lsp.buf.code_action, "Lsp code actions")
@@ -87,7 +77,6 @@ clues = {
 }
 for _, args in ipairs({
     { "<leader>r",  "+Grep" },
-    { "<leader>rl", "+LspGrep" },
     { "<leader>b",  "+Buffer" },
     { "<leader>t",  "+Tab" },
     { "<leader>d",  "+Diagnostics" },
@@ -105,3 +94,4 @@ miniclue.setup({
         delay = 0, config = { width = 80 },
     },
 })
+
