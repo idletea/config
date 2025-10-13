@@ -3,6 +3,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 6
 vim.opt.signcolumn = "yes:1"
 vim.opt.inccommand = "nosplit"
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undo"
