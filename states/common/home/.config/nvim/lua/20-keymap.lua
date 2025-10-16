@@ -13,8 +13,9 @@ end
 -- keymaps --
 -------------
 vim.g.mapleader = ";"
+local fzf = require("fzf-lua")
 
-map("<c-p>", cmd [[:Pick files]], "Pick files")
+map("<c-p>", fzf.files, "Pick files")
 map("<c-k>", vim.lsp.buf.signature_help, "Lsp signature help")
 
 -- buffer
@@ -39,8 +40,8 @@ nmap("gr", vim.lsp.buf.references, "Go to references")
 nmap("gt", vim.lsp.buf.type_definition, "Go to type def")
 
 -- ripgrep (search)
-map("<leader>rg", cmd [[:Pick grep_live]], "Live grep")
-map("<leader>rr", cmd [[:Pick resume]], "Live grep resume")
+map("<leader>rg", fzf.live_grep, "Live grep")
+map("<leader>rr", fzf.live_grep_resume, "Live grep resume")
 
 -- lsp
 map("<leader>la", vim.lsp.buf.code_action, "Lsp code actions")

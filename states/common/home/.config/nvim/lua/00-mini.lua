@@ -23,7 +23,6 @@ require("mini.statusline").setup()
 require("mini.tabline").setup()
 require("mini.notify").setup()
 require("mini.completion").setup()
-require("mini.pick").setup()
 require("mini.clue").setup()
 require("mini.bufremove").setup({ silent = true})
 
