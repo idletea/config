@@ -50,13 +50,11 @@ def packages(machine: Machine):
         "bash-completion",
         "bind",
         "brightnessctl",
-        "fd",
         "fish",
         "fzf",
         "git",
         "git-delta",
         "ipcalc",
-        "jq",
         "lsd",
         "man-db",
         "neovim",
@@ -67,7 +65,6 @@ def packages(machine: Machine):
         "shellcheck",
         "unzip",
         "usage",
-        "yq",
         # fonts
         "ttf-liberation",
         "otf-font-awesome",
@@ -80,7 +77,7 @@ def packages(machine: Machine):
         "pipewire-pulse",
         "pavucontrol",
         # applications
-        "firefox",
+        # "firefox",
         "wl-clipboard",
         # bluetooth
         "bluez",
@@ -94,6 +91,7 @@ def packages(machine: Machine):
                 # sway / desktop
                 "sway",
                 "swaybg",
+                "kitty",
                 "waybar",
                 "xorg-xwayland",
                 "wofi",
@@ -101,22 +99,18 @@ def packages(machine: Machine):
                 "xdg-desktop-portal-gtk",
             ]
         )
-    elif machine == Machine.KAGRENAC:
+    elif machine == Machine.DWEMER:
         packages.extend(
             [
-                # kde & related
-                "plasma-meta",
-                "sddm",
-                "sddm-kcm",
-                "qt5-declarative",
-                # kde apps
-                "ark",
-                "dolphin",
-                "dolphin-plugins",
-                "okular",
-                "gwenview",
-                # hardware
-                "nvidia-open",
+                # sway / desktop
+                "sway",
+                "swaybg",
+                "swayidle",
+                "swaylock",
+                "kitty",
+                "xorg-xwayland",
+                "xdg-desktop-portal-wlr",
+                "xdg-desktop-portal-gtk",
             ]
         )
 
@@ -143,15 +137,6 @@ def services(machine: Machine):
         _sudo=True,
     )
 
-    if machine == Machine.KAGRENAC:
-        systemd.service(
-            name="SDDM service",
-            service="sddm.service",
-            running=True,
-            enabled=True,
-            _sudo=True,
-        )
-
 
 def home_dir():
     for dir in ["downloads", "documents", "images", ".local/bin"]:
@@ -172,13 +157,6 @@ def home_dir():
     )
 
 
-def sway():
-    recursive_relative_symlink(
-        src="states/linux-sway/home/",
-        dest=f"{os.environ['HOME']}/",
-    )
-
-
 def apply(machine: Machine) -> None:
     sys_files()
     packages(machine)
@@ -195,6 +173,11 @@ def apply(machine: Machine) -> None:
 
     if machine == Machine.LORKHAN:
         recursive_relative_symlink(
-            src="states/linux-sway/home/",
+            src="states/lorkhan/home/",
+            dest=f"{os.environ['HOME']}/",
+        )
+    if machine == Machine.DWEMER:
+        recursive_relative_symlink(
+            src="states/dwemer/home/",
             dest=f"{os.environ['HOME']}/",
         )
