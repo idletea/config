@@ -9,9 +9,12 @@ vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undo"
 vim.opt.undofile = true
 
+vim.cmd [[:colorscheme habamax]]
+
 require("00-mini")
 require("10-nvim-tree")
 require("10-treesitter")
+require("10-gitsigns")
 require("10-lsp")
 require("10-fzf")
 require("20-keymap")

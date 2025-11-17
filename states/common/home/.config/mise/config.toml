@@ -2,6 +2,7 @@
 kind = "latest"
 kubectl = "latest"
 
+gh = "latest"
 python = "latest"
 pipx = "latest"
 "pipx:ruff" = "latest"
