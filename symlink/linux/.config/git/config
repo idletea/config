@@ -1,0 +1,16 @@
+[user]
+    name = Terry Kerr
+    email = terry@idletea.net
+[core]
+    editor = nvim
+    pager = delta
+[init]
+    defaultBranch = trunk
+
+# git-delta config
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+[merge]
+    conflictstyle = zdiff3

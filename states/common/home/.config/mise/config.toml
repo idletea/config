@@ -1,9 +1,0 @@
-[tools]
-kind = "latest"
-kubectl = "latest"
-
-gh = "latest"
-python = "latest"
-pipx = "latest"
-"pipx:ruff" = "latest"
-"pipx:python-lsp-server" = { version = "latest", uvx_args = "--with python-lsp-ruff" }

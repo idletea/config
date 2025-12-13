@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+export PYTHONPATH="$(pwd)/states:${PYTHONPATH:-}"
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    state_file="states/macos.py"
+else
+    sudo true  # pyinfra doesn't reprompt
+    state_file="states/$(cat /etc/hostname).py"
+fi
+
+pyinfra @local --yes "$state_file"

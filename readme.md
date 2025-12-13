@@ -1,9 +1,15 @@
 # config
 
-A dotfiles repo and system config management using [pyinfra](https://pyinfra.com/).
+A dotfiles repo + config file management using pyinfra
 
-The intention is to codify various parts of workstation setup such that
+* Config files get symlinked so hand-edits to config files are easy to collect in git
+* Different machines can get different subsets of the configuration so I can still have some variation
+* As much as possible: I should be able to start with a fresh archlinux/macos machine and get it usable automatically
 
-* it's easy to share across my personal and work devices
-* it's easy to *not* share certain things
-* symlinks things so I can just edit files in-place and still get the changes in the git repo
+## AUR packages
+
+For linux machines I'm not worrying about aur packages for now, so for my own sake here's what I need to re-get on new machines
+
+* 1password
+* 1password-cli
+* rot8-git (just for my GPD Pocket 4)

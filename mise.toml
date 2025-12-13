@@ -1,6 +1,4 @@
 [tools]
-uv = "latest"
-python = "3"
-
-[env]
-_.python.venv = { create = true, path = ".venv" }
+python = "latest"
+pipx = "latest"
+"pipx:pyinfra-dev/pyinfra" = "latest"
