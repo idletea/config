@@ -52,8 +52,9 @@ def packages():
         "fzf",
         "git",
         "git-delta",
-        "lsd",
         "ipcalc",
+        "just",
+        "lsd",
         "man-db",
         "neovim",
         "openssh",
@@ -72,6 +73,9 @@ def packages():
         # bluetooth
         "bluez",
         "bluetui",
+        # language tools
+        "uv",
+        "rustup",
     ]
     pacman.packages(
         name="Linux utilities",

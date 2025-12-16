@@ -2,8 +2,10 @@
 output "*" bg /home/idte/images/wallpapers/owl.jpg fill
 input "type:keyboard" xkb_options caps:escape
 
-# auto-rotate
+# daemons
 exec rot8 --invert-xy yx
+exec 1password --silent
+
 
 ## visuals
 gaps           inner 1

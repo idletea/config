@@ -1,4 +1,7 @@
 [tools]
-python = "latest"
-pipx = "latest"
+rclone = "1.72"
+
+# pyinfra and deps
+python = "3.13"
+pipx = "1.8"
 "pipx:pyinfra-dev/pyinfra" = "latest"
