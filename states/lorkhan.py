@@ -15,6 +15,8 @@ def desktop():
             "xorg-xwayland",
             "xdg-desktop-portal-wlr",
             "wl-clipboard",
+            "waybar",
+            "brightnessctl",
             # audio
             "pipewire",
             "pipewire-pulse",
@@ -23,6 +25,7 @@ def desktop():
             "fish",
             "kitty",
             "fuzzel",
+            "blueberry",
         ],
         _sudo=True,
     )

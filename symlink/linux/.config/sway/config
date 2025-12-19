@@ -11,7 +11,7 @@ exec 1password --silent
 ## visuals
 gaps           inner 1
 gaps           outer 1
-default_border pixel 1
+default_border pixel 4
 
 ## keybinds
 set $mod Mod4
@@ -94,5 +94,10 @@ bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
 bindsym XF86AudioPlay         exec playerctl play-pause
 bindsym XF86AudioNext         exec playerctl next
 bindsym XF86AudioPrev         exec playerctl previous
+
+## bar
+bar {
+    swaybar_command waybar
+}
 
 include /etc/sway/config.d/*
