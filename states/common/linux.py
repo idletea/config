@@ -70,6 +70,8 @@ def packages():
         "noto-fonts-extra",
         "noto-fonts-cjk",
         "ttf-zed-mono-nerd",
+        "ttf-iosevkaterm-nerd",
+        "ttf-iosevka-nerd",
         # bluetooth
         "bluez",
         "bluetui",
