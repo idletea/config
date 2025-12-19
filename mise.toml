@@ -1,5 +1,6 @@
 [tools]
 rclone = "1.72"
+fnox = "1"
 
 # pyinfra and deps
 python = "3.13"

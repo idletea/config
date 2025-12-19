@@ -1,6 +1,7 @@
 ## io
 output "*" bg /home/idte/images/wallpapers/owl.jpg fill
 input "type:keyboard" xkb_options caps:escape
+input 9610:268:BY_Tech_Gaming_Keyboard xkb_layout "escape-tilde"
 
 # daemons
 exec rot8 --invert-xy yx
