@@ -1,0 +1,312 @@
+@define-color dark-4  #2e3440;
+@define-color dark-3  #3b4552;
+@define-color dark-2  #434c5e;
+@define-color dark-1  #4c566a;
+@define-color white-3 #d8dee9;
+@define-color white-2 #e5e9f0;
+@define-color white-1 #eceff4;
+@define-color blue-1  #8fbcbb;
+@define-color blue-2  #88c0d0;
+@define-color blue-3  #81a1c1;
+@define-color blue-4  #5e81ac;
+@define-color red     #bf616a;
+@define-color orange  #d08770;
+@define-color yellow  #ebcb6b;
+@define-color green   #a3be8c;
+@define-color purple  #b48ead;
+
+* {
+  all: unset;
+  font-family: FiraCode Nerd Font;
+  transition: 0.2s;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.floating-notifications.background .notification-row {
+  padding: 1rem;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  background-color: @white-1;
+  color: @dark-1;
+  border: 1px solid @blue-1;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification {
+  padding: 0.5rem;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 1px solid @red;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  margin: 0.5rem;
+  color: @dark-1;
+  font-weight: bold;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  margin: 0.5rem;
+  color: @purple;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 3rem;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  color: @dark-1;
+  background-color: @white-1;
+  border: 1px solid @blue-1;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: @white-2;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @blue-1;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button {
+  margin: 0.5rem;
+  padding: 0.25rem;
+  color: @dark-1;
+  background-color: @red;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:hover {
+  color: @white-1;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @red;
+}
+
+.control-center {
+  margin: 0 0 6rem 0;
+  background-color: @white-1;
+  color: @dark-1;
+  padding: 1rem;
+  border-left: 1px solid @blue-1;
+  border-bottom: 1px solid @blue-1;
+}
+
+.control-center .widget-title {
+  color: @dark-1;
+  font-weight: bold;
+}
+
+.control-center .widget-title button {
+  color: @dark-1;
+  background-color: @white-1;
+  border: 1px solid @blue-1;
+  padding: 0.5rem;
+}
+
+.control-center .widget-title button:hover {
+  background-color: @white-2;
+}
+
+.control-center .widget-title button:active {
+  background-color: @blue-1;
+}
+
+.control-center .notification-row .notification-background {
+  margin: 0.5rem 0;
+  background-color: @white-1;
+  color: @dark-1;
+  border: 1px solid @blue-1;
+}
+
+.control-center .notification-row .notification-background .notification {
+  padding: 0.5rem;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 1px solid @red;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  color: @dark-1;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  margin: 0.5rem;
+  color: @dark-1;
+  font-weight: bold;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  margin: 0.5rem;
+  color: @purple;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 3rem;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  color: @dark-1;
+  background-color: @white-1;
+  border: 1px solid @blue-1;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: @white-2;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @blue-1;
+}
+
+.control-center .notification-row .notification-background .close-button {
+  margin: 0.5rem;
+  padding: 0.25rem;
+  color: @dark-1;
+  background-color: @red;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  color: @white-1;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @red;
+}
+
+.notification.critical progress {
+  background-color: @red;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @blue-4;
+}
+
+trough {
+  background-color: @white-1;
+}
+
+.control-center trough {
+  background-color: @blue-1;
+}
+
+.control-center-dnd {
+  margin: 1rem 0;
+}
+
+.control-center-dnd slider {
+  background: @white-2;
+}
+
+.widget-dnd {
+  color: @purple;
+}
+
+.widget-dnd > switch {
+  background: @white-2;
+  border: 1px solid @blue-1;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @blue-3;
+}
+
+.widget-dnd > switch slider {
+  background: @blue-1;
+  margin: 0.25rem;
+}

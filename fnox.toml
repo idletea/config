@@ -1,0 +1,11 @@
+default_provider = "1pass"
+
+[providers.1pass]
+type = "1password"
+vault = "Personal"
+account = "my.1password.ca"
+
+[secrets]
+RCLONE_PROTONDRIVE_USERNAME = { provider = "1pass", value = "ProtonMail/username" }
+RCLONE_PROTONDRIVE_PASSWORD = { provider = "1pass", value = "ProtonMail/password" }
+RCLONE_PROTONDRIVE_2FA= { provider = "1pass", value = "ProtonMail/one-time password?attribute=otp" }
