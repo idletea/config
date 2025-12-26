@@ -72,6 +72,7 @@ def packages():
         "ttf-zed-mono-nerd",
         "ttf-iosevkaterm-nerd",
         "ttf-iosevka-nerd",
+        "ttf-firacode-nerd",
         # bluetooth
         "bluez",
         "bluetui",
