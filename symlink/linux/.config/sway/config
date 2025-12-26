@@ -1,12 +1,13 @@
 ## io
-output "*" bg /home/idte/images/wallpapers/owl.jpg fill
-input "type:keyboard" xkb_options caps:escape
+output * bg /home/idte/images/wallpapers/owl.jpg fill
+input type:keyboard xkb_options caps:escape
 input 9610:268:BY_Tech_Gaming_Keyboard xkb_layout "escape-tilde"
+input type:pointer natural_scroll enabled
 
 # daemons
 exec rot8 --invert-xy yx
 exec 1password --silent
-
+exec swaync
 
 ## visuals
 gaps           inner 1
@@ -22,6 +23,7 @@ bindsym $mod+shift+e exec swaynag -t warning -m "Exit?" -B "Yes" "swaymsg exit"
 
 bindsym $mod+return exec kitty
 bindsym $mod+d exec fuzzel --font "monospace" --no-icons -b 333333ff -f ddddddff -r 0
+bindsym $mod+n exec swaync-client -t sw
 
 ## focus / movement
 bindsym $mod+s      layout stacking

@@ -26,6 +26,7 @@ def desktop():
             "kitty",
             "fuzzel",
             "blueberry",
+            "swaync",
         ],
         _sudo=True,
     )
