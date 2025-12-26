@@ -1,8 +1,25 @@
 /* nord colors */
-@define-color fg #c5c9c5;
-@define-color bg #181616;
-@define-color selected-bg #e6c384;
-@define-color selected-fg @bg;
+@define-color dark-4  #2e3440;
+@define-color dark-3  #3b4552;
+@define-color dark-2  #434c5e;
+@define-color dark-1  #4c566a;
+@define-color white-3 #d8dee9;
+@define-color white-2 #e5e9f0;
+@define-color white-1 #eceff4;
+@define-color blue-1  #8fbcbb;
+@define-color blue-2  #88c0d0;
+@define-color blue-3  #81a1c1;
+@define-color blue-4  #5e81ac;
+@define-color red     #bf616a;
+@define-color orange  #d08770;
+@define-color yellow  #ebcb6b;
+@define-color green   #a3be8c;
+@define-color purple  #b48ead;
+
+@define-color bg @white-1;
+@define-color fg @dark-1;
+@define-color selected-bg @dark-1;
+@define-color selected-fg @white-1;
 @define-color critical-bg #c4746e;
 @define-color critical-fg @bg;
 @define-color good-bg #8a9a7b;
@@ -10,10 +27,8 @@
 
 
 * {
-    font-family: Iosevka NFM;
+    font-family: FiraCode Nerd Font;
     font-size: 12px;
-    color: @fg;
-    background: transparent;
     border: none;
     border-radius: 0;
     margin: 0;
@@ -21,13 +36,17 @@
     min-height: 0;
 }
 
-.modules-left:first-child { margin-left: 6px; }
+body {
+    color: @fg;
+    background: @bg;
+}
+
 .modules-right:last-child { margin-right: 6px; }
 
 .modules-left,
 .modules-center,
 .modules-right {
-    margin-top: 4px;
+    margin-top: 0;
 }
 
 
