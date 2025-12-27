@@ -5,6 +5,7 @@ if status is-interactive
 
     fish_add_path --prepend "$HOME/.local/bin"
     set -gx EDITOR (command -v nvim)
+    set -gx SSH_AUTH_SOCK "$HOME/.1password/agent.sock"
 
     set -g __fish_git_prompt_show_informative_status 1
     set -g __fish_git_prompt_char_stateseparator "⋮"
