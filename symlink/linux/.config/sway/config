@@ -1,5 +1,5 @@
 ## io
-output * bg /home/idte/images/wallpapers/owl.jpg fill
+output * bg /home/idte/images/wallpapers/pagoda-in-swamp.jpg fill
 input type:keyboard xkb_options caps:escape
 input 9610:268:BY_Tech_Gaming_Keyboard xkb_layout "escape-tilde"
 
@@ -9,8 +9,8 @@ exec 1password --silent
 exec swaync
 
 ## visuals
-gaps           inner 1
-gaps           outer 1
+gaps           inner 4
+gaps           outer 2
 default_border pixel 2
 
 ## keybinds

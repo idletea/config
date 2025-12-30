@@ -62,6 +62,7 @@ def packages():
         "ripgrep",
         "unzip",
         "usage",
+        "wireguard-tools",
         # fonts
         "ttf-liberation",
         "otf-font-awesome",

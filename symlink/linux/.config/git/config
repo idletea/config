@@ -1,11 +1,23 @@
 [user]
     name = Terry Kerr
     email = terry@idletea.net
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID9t+FikPk/J3Mg2gUI0yBjbyeRSlIIWAKNjSnFBhgD7
+
 [core]
     editor = nvim
     pager = delta
+
 [init]
     defaultBranch = trunk
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
 
 # git-delta config
 [interactive]
