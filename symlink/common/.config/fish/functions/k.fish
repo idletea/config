@@ -1,7 +1,6 @@
 function k
-    if test -n "$KUBECTL_NAMESPACE"
-        kubectl --namespace $KUBECTL_NAMESPACE $argv
-    else
-        kubectl $argv
+    if test -f ~/.config/kube/kuberc
+        set -la args "--kuberc ~/.config/kube/kuberc"
     end
+    kubectl $argv $args
 end

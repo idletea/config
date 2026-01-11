@@ -5,7 +5,10 @@ export PYTHONPATH="$(pwd)/states:${PYTHONPATH:-}"
 if [[ "$(uname)" == "Darwin" ]]; then
     state_file="states/macos.py"
 else
-    sudo true  # pyinfra doesn't reprompt
+    # pyinfra will just retry with the same password on failure, so
+    # a single mistype ends up getting the account locked
+    sudo true
+
     state_file="states/$(cat /etc/hostname).py"
 fi
 

@@ -1,0 +1,14 @@
+---
+apiVersion: kubectl.config.k8s.io/v1beta1
+kind: Preference
+credentialPluginPolcy: DenyAll
+defaults:
+  - command: apply
+    options:
+      - name: server-side
+        default: "true"
+
+  - command: delete
+    options:
+      - name: interactive
+        default: "true"
