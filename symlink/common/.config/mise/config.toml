@@ -1,1 +1,6 @@
 [tools]
+rust = "latest"
+"cargo:selfci" = "latest"
+
+node = "latest"
+"npm:opencode-ai" = "latest"

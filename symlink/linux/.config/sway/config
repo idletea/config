@@ -9,9 +9,9 @@ exec 1password --silent
 exec swaync
 
 ## visuals
-gaps           inner 4
-gaps           outer 2
-default_border pixel 2
+gaps           inner 2
+gaps           outer 1
+default_border pixel 1
 
 ## keybinds
 set $mod Mod4

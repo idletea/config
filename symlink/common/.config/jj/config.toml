@@ -6,3 +6,4 @@ email = "terry@idletea.net"
 
 [ui]
 editor = "nvim"
+default-command = "log"
